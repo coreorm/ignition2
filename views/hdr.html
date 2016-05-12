@@ -1,0 +1,325 @@
+
+<!doctype html>
+
+<html class="carsguide-dora no-js"
+      xmlns:ng="http://angularjs.org">
+<head>
+    <title>Quick Service Finder | CarsGuide</title>
+
+    <meta name="fragment" content="!">
+    <meta name="description" content="What car is right for me? Use our car selector tool and find the perfect car to suit your needs.">
+    <meta name="keywords" content="what car should i buy, what car is right for me, which car should i buy">
+    <meta name="robots" content="all">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="//www.carsguide.com.au/buy-a-car/assets/images/f0185ae1.favicon-144.png">
+    <link rel="icon" href="//www.carsguide.com.au/buy-a-car/assets/images/92a86645.favicon-32.png" sizes="32x32">
+    <link rel="shortcut icon" href="//www.carsguide.com.au/buy-a-car/assets/images/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="apple-touch-icon-precomposed" href="//www.carsguide.com.au/buy-a-car/assets/images/a5f66162.favicon-152.png" sizes="152x152">
+    <link rel="apple-touch-icon-precomposed" href="//www.carsguide.com.au/buy-a-car/assets/images/f0185ae1.favicon-144.png" sizes="144x144">
+    <link rel="apple-touch-icon-precomposed" href="//www.carsguide.com.au/buy-a-car/assets/images/b2994689.favicon-120.png" sizes="120x120">
+    <link rel="apple-touch-icon-precomposed" href="//www.carsguide.com.au/buy-a-car/assets/images/b2994689.favicon-120.png" sizes="114x114">
+    <link rel="apple-touch-icon-precomposed" href="//www.carsguide.com.au/buy-a-car/assets/images/0bf55b94.favicon-72.png" sizes="72x72">
+    <link rel="apple-touch-icon-precomposed" href="//www.carsguide.com.au/buy-a-car/assets/images/4a66c114.favicon-57.png">
+    <link rel="apple-touch-icon-precomposed" href="//www.carsguide.com.au/buy-a-car/assets/images/a5f66162.favicon-152.png">
+    ​
+    <script type="text/javascript">
+        window.base_url = '//www.carsguide.com.au';
+        window.current_path = '';
+        window.path_alias = '';
+        // default callback - so this can be overriden from any where.
+        if (!window.UHFCallback) window.UHFCallback = function() {};
+    </script>
+    <style>
+        #universalH .uhf-refine {
+            display: none;
+        }
+
+        @media  screen and (max-width: 767px) {
+            #universalH .uhf-refine {
+                display: block;
+            }
+        }
+    </style>
+    <script src="scripts/bower_components/simple.js/dist/simple.dev.js"></script>
+    <script>
+        // custom event emitter and listener instead of CustomEvent (mainly for IE)
+        var CG_Event = {
+            eventCache: {}, listen: function (e, t) {
+                this.eventCache[e] || (this.eventCache[e] = []), this.eventCache[e].push(t)
+            }, emit: function (e, t) {
+                if (this.eventCache[e] && this.eventCache[e].length > 0)for (var h in this.eventCache[e]) {
+                    var n = this.eventCache[e][h];
+                    try {
+                        n(t)
+                    } catch (c) {
+                        console.log("Error", c)
+                    }
+                }
+            }
+        };
+        // if (Modernizr.history)
+        var isHTML5HistorySupported = true;
+        (function () {
+            window.cookieTools = new function () {
+                this.setCookie = function (cname, cvalue, exireMinutes, cookiePath) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + ( exireMinutes * 60 * 1000));
+                    var expires = "expires=" + d.toUTCString();
+                    document.cookie = cname + "=" + cvalue.toString() + "; " + expires + "; path=" + cookiePath;
+                }
+                this.getCookie = function (cname) {
+                    var name = cname + "=";
+                    var ca = document.cookie.split(';');
+                    for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ')
+                            c = c.substring(1);
+                        if (c.indexOf(name) == 0)
+                            return c.substring(name.length, c.length);
+                    }
+                    return "";
+                }
+            }
+            window.HTTP_REFERER = window.cookieTools.getCookie('HTTP_REFERER');
+            window.cookieTools.setCookie('HTTP_REFERER', window.location.href, 60 * 4, '/');
+        })();
+    </script>
+    <script>// store window width for advertisements
+    (function () {
+        window.cgWindowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    })();
+    </script>
+    <!--[if lte IE 8]>
+    <script>
+        document.location.href = 'https://members.carsguide.com.au/errors/old-browser.php';
+    </script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script>
+        var isHTML5HistorySupported = false;
+    </script>
+    <style>
+        .listing-alert-container, .btn--setCarAlert {
+            display: none !important;
+            filter: alpha(opacity=0);
+        }
+    </style>
+    <![endif]-->
+
+    <!-- Styles common to all pages -->
+
+    <link rel="stylesheet" href="//www.carsguide.com.au/buy-a-car/assets/styles/c1c0e356.vendor.css"/>
+
+    <link rel="stylesheet" href="//www.carsguide.com.au/buy-a-car/assets/styles/e2adc00e.main.css"/>
+
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" href="//www.carsguide.com.au/buy-a-car/assets/styles/b0b13bc3.mainPage1.css"/>
+    <![endif]-->
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" href="//www.carsguide.com.au/buy-a-car/assets/styles/57ef2c4f.mainPage2.css"/>
+    <![endif]-->
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" href="//www.carsguide.com.au/buy-a-car/assets/styles/d8188d94.mainPage3.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="/styles/demo.css"/>
+
+    <!-- styles for HMC page go here -->
+
+    <link rel="stylesheet" href="//www.carsguide.com.au/misc/uhf/uhf.css?1462920830"></head>
+<body>
+
+<!-- GA Tracking -->
+
+
+
+<div site-header-directive ng-controller="HeaderController" ng-init="initHeader()" class="ng-scope">
+    <div class="slim-banner-container hide">
+        <div class="slim-banner">
+            <a class="banner-close-btn"></a>
+            <div class="banner">
+                <strong>CarsGuide for <span class="device"></span></strong>
+                <p class="editorial hide">Search cars for sale using our app</p>
+                <p class="listing hide">Find your next car using our app</p>
+                <a class="install-btn hide ios" target="_blank" href="https://173848.measurementapi.com/serve?action=click&publisher_id=173848&site_id=102438&offer_id=404627&agency_id=992">Install</a>
+                <a class="install-btn hide android" target="_blank" href="https://173848.measurementapi.com/serve?action=click&publisher_id=173848&site_id=102440&offer_id=404625&agency_id=992">Install</a>
+            </div>
+        </div>
+    </div>  <div id="universalH" class="uhf-header-wrapper uhf-collapsed universalHF">
+    <header>
+        <div class="uhf-refine" onclick="window.UHFInitializer.refine.dora();">Refine</div>
+        <div class="uhf-logo">
+            <a href="http://local.carsguide.com.au:8000/" title="carsguide"><img src="//www.carsguide.com.au/sites/all/themes/carsguide_theme/assets/images/carsguide-logo-collapsed.png" alt="carsguide.com.au"></a>
+        </div>
+
+        <div class="uhf-shortlist-mobile uhf-clearfix">
+            <a href="http://local.carsguide.com.au:8000/my-shortlist"
+               class="uhf-icon-star-new"
+               data-gtm-category="header" data-gtm-action="click"
+               data-gtm-label="member alert compare cars" data-gtm-value="">
+                <span class="uhf-count-bubble" id="compare-count-responsive">0</span>
+            </a>
+        </div>
+
+        <div class="uhf-mobile-menu-btn">
+
+            <a href="javascript:void(0)" class="uhf-icon-paragraph uhf-open-menu"></a>
+            <!-- <a href="javascript:void(0)" class="uhf-icon-cross uhf-close-menu"></a> -->
+        </div>
+
+        <div class="uhf-menu-wrapper">
+            <!-- .main-nav -->
+            <nav class="uhf-main-nav uhf-clearfix">
+                <ul class="uhf-clearfix">
+                    <li class="uhf-cars-for-sale uhf-dropdown-menu-toggle" id="view_car_deal">
+                        <a href="http://local.carsguide.com.au:8000/buy-a-car/new-and-used-car-search" data-gtm-category="header" data-gtm-action="click" data-gtm-label="top nav cars for sale" data-gtm-value="">Cars For Sale</a>
+                        <a href="javascript:void(0)" class="uhf-icon-arrow-up-down" data-toggle-target=".uhf-dropdown-menu-toggle"></a>
+                        <ul class="uhf-dropdown-menu">
+                            <li><a href="http://local.carsguide.com.au:8000/buy-a-car/all-new-and-used/all-states/all-locations/all-bodytypes/all-makes/" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav search cars" data-gtm-value="">Search Cars</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/buy-a-car/used-car-search" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav used cars search" data-gtm-value="">Used Cars Search</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/buy-a-car/new-car-search" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav new cars search" data-gtm-value="">New Cars Search</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/buy-a-car/advanced-search" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav advanced search" data-gtm-value="">Advanced Search</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/buy-a-car/dealer-search" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav find a dealer" data-gtm-value="">Find a Dealer</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/deals?main_nav" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav new car deals" data-gtm-value="">New Car Deals</a></li>
+                            <li><a href="/service-finder" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav new car deals" data-gtm-value="">Find a Service <span>New - Yeah No Kidding!</span></a></li>
+                        </ul>
+                        <div class="uhf-arrow_box" data-condition="document.cookie.indexOf('show_car_deal_bubble') == -1 && window.path_alias == 'homepage'" data-callback="document.cookie = 'show_car_deal_bubble=1'">Check out New Car Deals now.</div>
+                    </li>
+                    <li class="uhf-sell-my-car uhf-dropdown-menu-toggle">
+                        <a href="http://local.carsguide.com.au:8000/sell-my-car" data-gtm-category="header" data-gtm-action="click" data-gtm-label="top nav sell my car" data-gtm-value="">Sell My Car</a>
+                        <a href="javascript:void(0)" class="uhf-icon-arrow-up-down" data-toggle-target=".uhf-dropdown-menu-toggle"></a>
+                        <ul class="uhf-dropdown-menu">
+                            <li><a href="https://sellmycar.carsguide.com.au/sell-your-car/quickstart" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav start my free ad" data-gtm-value="">Start My FREE Ad</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/sell-my-car/edit-or-renew-an-ad" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav edit your ad" data-gtm-value="">Edit Your Ad</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/car-valuation" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav value your car" data-gtm-value="">Value Your Car</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/tags/selling-advice" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav car selling advice" data-gtm-value="">Car Selling Advice</a></li>
+                        </ul>
+                    </li>
+                    <li class="uhf-car-reviews uhf-dropdown-menu-toggle">
+                        <a href="http://local.carsguide.com.au:8000/car-reviews" data-gtm-category="header" data-gtm-action="click" data-gtm-label="top nav car reviews" data-gtm-value="">Car Reviews</a>
+                        <a href="javascript:void(0)" class="uhf-icon-arrow-up-down" data-toggle-target=".uhf-dropdown-menu-toggle"></a>
+                        <ul class="uhf-dropdown-menu">
+                            <li><a href="http://local.carsguide.com.au:8000/car-reviews-by-make" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav car reviews by make" data-gtm-value="">Car Reviews by Make</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/car-reviews/by-body-type" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav car reviews by body type" data-gtm-value="">Car Reviews by Body Type</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/used-car-reviews/by-make" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav used car reviews by make" data-gtm-value="">Used Car Reviews by Make</a></li>
+                        </ul>
+                    </li>
+                    <li class="uhf-car-news uhf-dropdown-menu-toggle">
+                        <a href="http://local.carsguide.com.au:8000/car-news" data-gtm-category="header" data-gtm-action="click" data-gtm-label="top nav car news" data-gtm-value="">Car News</a>
+                        <a href="javascript:void(0)" class="uhf-icon-arrow-up-down" data-toggle-target=".uhf-dropdown-menu-toggle"></a>
+                        <ul class="uhf-dropdown-menu">
+                            <li><a href="http://local.carsguide.com.au:8000/tags/motor-shows" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav motor shows" data-gtm-value="">Motor Shows</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/tags/concept-cars" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav concept cars" data-gtm-value="">Concept Cars</a></li>
+                        </ul>
+                    </li>
+                    <li class="uhf-car-insurance">
+                        <a href="http://local.carsguide.com.au:8000/car-insurance" data-gtm-category="header" data-gtm-action="click" data-gtm-label="top nav insurance" data-gtm-value="">Insurance</a>
+                    </li>
+                    <li class="uhf-car-advice uhf-dropdown-menu-toggle">
+                        <a href="http://local.carsguide.com.au:8000/car-advice" data-gtm-category="header" data-gtm-action="click" data-gtm-label="top nav car advice" data-gtm-value="">Car Advice</a>
+                        <a href="javascript:void(0)" class="uhf-icon-arrow-up-down" data-toggle-target=".uhf-dropdown-menu-toggle"></a>
+                        <ul class="uhf-dropdown-menu">
+                            <li><a href="http://local.carsguide.com.au:8000/car-advice/buyers-guide" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav buyers guide" data-gtm-value="">Buyers Guide</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/car-loans-finance" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav car finance" data-gtm-value="">Car Finance</a></li>
+                            <li><a href="http://local.carsguide.com.au:8000/car-advice/q-and-a" data-gtm-category="header" data-gtm-action="click" data-gtm-label="sub nav ask smithy" data-gtm-value="">Ask 'The Guide'</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- //.main-nav -->
+
+            <!-- #sign-and-search -->
+
+            <div class="clearfix" id="compare-notification-container"></div>
+            <div class="uhf-clearfix" id="uhf-sign-and-search">
+
+                <div class="uhf-mobile-login-signup">
+                    <span class="uhf-icon-person-man"></span><a href="https://members.carsguide.com.au/customer/account/create "><span>Register</span></a> or <a href="https://members.carsguide.com.au/customer/account/login/ ">Sign in</a>
+                    <!-- <div class="uhf-trip-item"><a href="http://local.carsguide.com.au:8000/trip-planner">Trip Planner</a> <span class="uhf-count" id="trip-planner-count-mobile">0</span></div> -->
+                    <span class="uhf-login-signup uhf-desktop-only">
+                        <a href="https://members.carsguide.com.au/customer/account/login/">Log in/Sign up</a>
+                        <span id="cg-display-name-secondary" class="uhf-display-name">Guest</span>
+                    </span>
+                </div>
+
+                <!-- #login-button-container -->
+                <div id="uhf-login-button-container" data-memberurl="https://members.carsguide.com.au">
+
+                    <div class="uhf-shortlist uhf-clearfix uhf-desktop-only">
+                        <a href="http://local.carsguide.com.au:8000/my-shortlist"
+                           class="uhf-icon-star-new"
+                           data-gtm-category="header" data-gtm-action="click"
+                           data-gtm-label="member alert compare cars" data-gtm-value="">
+                            My Shortlist
+                            <span class="uhf-count-bubble" id="compare-count">0</span>
+                        </a>
+                    </div>
+
+                    <div class="uhf-dropdown uhf-clearfix" id="uhf-login-state-container">
+                        <a class="uhf-login-state-name uhf-clearfix" href="javascript:void(0)"><span class="uhf-icon-person-man"></span><span id="cg-display-name-primary">Register or Log in</span></a>
+
+                        <!-- .dropdown-menu -->
+                        <div class="uhf-dropdown-menu uhf-clearfix">
+                            <ul class="uhf-counters">
+                                <li class="uhf-logged-out-show uhf-desktop-only"><a href="https://members.carsguide.com.au/customer/account/create/" data-gtm-category="header" data-gtm-action="click" data-gtm-label="create account" data-gtm-value="">New to CarsGuide? Create an account</a></li>
+                                <li class="uhf-logged-out-show uhf-desktop-only"><a href="https://members.carsguide.com.au/customer/account/" data-gtm-category="header" data-gtm-action="click" data-gtm-label="log in" data-gtm-value="">Already Registered? Log in</a></li>
+                                <li class="uhf-trip-item"><a href="http://local.carsguide.com.au:8000/trip-planner" data-gtm-category="header" data-gtm-action="click" data-gtm-label="member alert trip planner" data-gtm-value="">Trip Planner</a> <a href="http://local.carsguide.com.au:8000/trip-planner" class="uhf-count" id="trip-planner-count">0</a></li>
+                                <li class="uhf-logged-in-show"><a href="https://members.carsguide.com.au/customer/account/alerts/" data-gtm-category="header" data-gtm-action="click" data-gtm-label="member alert car alerts" data-gtm-value="">Car Alerts</a> <a href="https://members.carsguide.com.au/customer/account/alerts/" class="uhf-count" id="alerts-count"><span>0</span></a></li>
+                                <li><a href="https://members.carsguide.com.au/manage-my-ad?ads=online" data-gtm-category="header" data-gtm-action="click" data-gtm-label="member alert your car ads" data-gtm-value="">Manage My Ad</a> <a href="https://members.carsguide.com.au/manage-my-ad?ads=online" class="uhf-count uhf-count-manage uhf-logged-in-show" id="ads-count"><span>0</span></a></li>
+
+                                <!-- <li class="uhf-logged-in-show"><a href="https://members.carsguide.com.au/customer/account/alerts">Manage Car Alerts</a></li> -->
+                                <li class="uhf-logged-in-show uhf-desktop-only"><a href="https://members.carsguide.com.au/customer/account/edit">Change My Details</a></li>
+                                <li class="uhf-mobile-only uhf-btn-manage-account uhf-logged-in-show"><a href="https://members.carsguide.com.au/customer/account/edit/"><i class="uhf-icon-person-man"></i><span>My Profile</span></a></li>
+                                <li class="uhf-logged-in-show uhf-logout"><a href="https://members.carsguide.com.au/cglogout-home.php"><i class="uhf-icon-logout"></i>Logout</a></li>
+                            </ul>
+
+                            <!-- .login-state -->
+                            <div class="uhf-login-state uhf-clearfix">
+                                <a href="https://members.carsguide.com.au/customer/account/edit/" class="uhf-btn-manage-account"><i class="uhf-icon-person-man"></i><span>My Profile</span></a>
+                                <a href="https://members.carsguide.com.au/cglogout-home.php" class="uhf-btn-logout"><i class="uhf-icon-logout"></i><span>Logout</span></a>
+                            </div>
+                            <!-- //.login-state -->
+
+                        </div>
+                        <!-- //.dropdown-menu -->
+
+                    </div>
+                    <!-- //#login-state-container -->
+                </div>
+                <!-- //#login-button-container -->
+
+                <!-- .search-box -->
+                <div class="uhf-search-box">
+                    <form name="header_search" action="//www.carsguide.com.au/cs-search" method="get">
+                        <div class="uhf-input-group">
+                            <span class="uhf-input-group-addon uhf-icon-magnifying-glass"></span>
+                            <input type="text" id="uhf-searchInput" name="keywords" value="" class="uhf-form-control uhf-search-text" placeholder="Search Car Reviews &amp; News">
+                            <a href="javascript:void(0)" data-search-target=".uhf-search-box" class="uhf-input-group-addon uhf-icon-cross" data-gtm-category="header" data-gtm-action="click" data-gtm-label="search" data-gtm-value=""></a>
+                        </div>
+                    </form>
+                </div>
+                <!-- //.search-box -->
+
+            </div>
+            <!-- //#sign-and-search -->
+        </div>
+
+        <div class="clearfix hidden" id="shortlist-notification-container">
+            <div class="padding">
+                <h3>Congrats, you have added your first car to your shortlist!</h3>
+                <p>This is where you can view and compare all the cars in your list.</p>
+                <button type="button" onclick="window.UHFInitializer.firstCarPop.down();">Ok, got it</button>
+            </div>
+        </div>
+        <!-- //.menu-wrapper -->
+    </header>
+</div>
+    <!--# generated at 2016-05-11 23:54:40 #-->
+
+    <!-- TODO: refactor hardcoded value. 27/01/2014 -->
+    <script type="text/javascript">
+        var cgMemberUrl = "https://members.carsguide.com.au";
+    </script>
+</div>

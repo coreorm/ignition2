@@ -1,0 +1,35 @@
+{
+  "name": "ignition2-demo",
+  "version": "1.0.0",
+  "description": "hackthon tech demo",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coreorm/ignition2.git"
+  },
+  "scripts": {
+    "start": "echo 'Run server at 1206, please open localhost:1206/ to access it' && node index.js 1206"
+  },
+  "dependencies": {
+    "async": "*",
+    "aws-sdk": "^2.2.0",
+    "body-parser": "*",
+    "ejs": "^2.4.1",
+    "express": "~4.2.0",
+    "express-session": "^1.8.2",
+    "hjs": "~0.0.6",
+    "jade": "^1.11.0",
+    "node-uuid": "^1.4.3",
+    "nodenote": "*",
+    "passport": "^0.2.1",
+    "passport-amazon": "^0.1.0",
+    "pug": "^2.0.0-alpha7",
+    "util": "^0.10.3"
+  },
+  "author": "Bruce B Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coreorm/ignition2/issues"
+  },
+  "homepage": "https://github.com/coreorm/ignition2#readme"
+}
