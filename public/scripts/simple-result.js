@@ -33,19 +33,13 @@
   app.template.sub.results = {
     _wrapper: ['<div class="serviceFinder--resultSimple" {attr}>', '</div>'],
     default: '<div class="serviceFinder--resultItem">' +
-    '<label><img class="img-rounded" src="{_img}"></label>' +
+    '<label><img src="/images/{_img}"></label>' +
     '<div><h3>{_hdr}</h3><p>{_cnt}</p><button class="btn btn-serviceFinder" ' +
     'onclick="SimpleApp(\'lp-result-simple\').updateState(\'detail\', true)">Get Price</button></div></div>'
   };
   app.data.results = {
     wrapper: {},
-    element: [
-      {
-        _img: '/images/1.jpg',
-        _hdr: 'Awesome service',
-        _cnt: 'Awesome service phone: 1244'
-      }
-    ]
+    element: []
   };
 
   app.init(document.getElementById('lp_result'), false);
@@ -53,8 +47,9 @@
   app.on(SimpleAppStateIsUpdated, 'submit', function (obj) {
     // we use the given state to do the job
     var inputData = SimpleApp('lp-form').state;
-    console.clear();
-    console.log(inputData);
+    document.location.href = '/more-details?make=' + inputData.make
+      + '&model=' + inputData.model
+      + '&location=' + inputData.location;
   });
 
 })();

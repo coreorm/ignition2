@@ -77,8 +77,8 @@ app.get('/', function (req, res) {
 app.get('/detail', function (req, res) {
   res.render('detail1');
 });
-app.get('/result-simple', function (req, res) {
-  res.render('result-simple');
+app.get('/more-details', function (req, res) {
+  res.render('form2');
 });
 app.get('/result-complete', function (req, res) {
   res.render('result-complete');
@@ -87,7 +87,7 @@ app.get('/confirm', function (req, res) {
   res.render('confirm-book');
 });
 app.get('/service-finder', function (req, res) {
-  res.render('lp');
+  res.render('lp', req.query);
 });
 
 /*-------------------[pages]-------------------*/

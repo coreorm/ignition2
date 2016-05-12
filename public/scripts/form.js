@@ -1,4 +1,16 @@
 (function () {
+  Array.prototype.shuffle = function() {
+    var i = this.length, j, temp;
+    if ( i == 0 ) return this;
+    while ( --i ) {
+      j = Math.floor( Math.random() * ( i + 1 ) );
+      temp = this[i];
+      this[i] = this[j];
+      this[j] = temp;
+    }
+    return this;
+  };
+
   // opts
   var app = SimpleApp('lp-form', {
     localStorageRead: false
@@ -114,6 +126,16 @@
       obj.state.model.length > 1) {
       var result = SimpleApp('lp-result-simple');
       result.data.jumbo._mm = obj.state.make + ' ' + obj.state.model;
+      // feed some data
+      var rnd = Math.floor(Math.random() * 6) + 4;
+      if (rnd > 9) {
+        rnd = 9;
+      }
+      result.data.results.element = [];
+      for (var i = 0; i <= rnd; i ++) {
+        result.data.results.element.push(window.sfDealers[i]);
+      }
+      result.data.results.element.shuffle();
       result.render(true);
     } else {
       alert('Please tell us about your car');
