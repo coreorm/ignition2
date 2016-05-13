@@ -37,6 +37,7 @@
     '<span class="icon-paragraph"></span></div>{year}</div>' +
     '<div class="input-group"> <div class="input-group-addon">' +
     '<span class="icon-pin"></span></div>{location}</div>' +
+    '<div class="input-group" style="padding: 10px;">{type}</div>' +
     '</div>' +
     '<h3>About yourself</h3>' +
     '<div class="form-group">' +
@@ -52,6 +53,25 @@
     '<input class="form-control" type="email" placeholder="Your email address"></div>' +
     '<div class="form-group">{btn}</div>' +
     '</form>'
+  };
+
+  app.template.sub.type = {
+    _type: 'div',
+    _wrapper: ['<div>', '</div>'],
+    default: '<label><input type="radio" {attr}> {value}</label>'
+  };
+  app.data.type = {
+    wrapper: {},
+    element: [
+      {
+        value: 'Quick service',
+        style: 'margin-right: 5px;'
+      },
+      {
+        value: 'Logbook service',
+        style: 'margin-right: 5px; margin-left:5px'
+      }
+    ]
   };
 
   app.template.sub.location = {
@@ -172,7 +192,6 @@
   };
 
   app.init(document.getElementById('lp_form'));
-  app.render();
 
   app.on(SimpleAppStateIsUpdated, 'make', function (obj) {
     console.clear();
@@ -232,7 +251,7 @@
     if (obj.state.location && obj.state.make && obj.state.model &&
       obj.state.location.length > 1 && obj.state.make.length > 1 &&
       obj.state.model.length > 1) {
-      window.location.href = '/result-complete';
+      window.location.href = '/result-complete?' + app.toQuerystring();
     } else {
       alert('Please tell us about your car');
       console.clear();

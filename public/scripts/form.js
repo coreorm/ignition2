@@ -100,7 +100,6 @@
   };
 
   app.init(document.getElementById('lp_form'));
-  app.render();
 
   app.on(SimpleAppStateIsUpdated, 'make', function (obj) {
     console.clear();

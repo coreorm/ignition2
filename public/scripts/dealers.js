@@ -1,52 +1,100 @@
-window.sfDealers = [
-  {
-    "_id": 806,
-    "dealerId": "02352",
-    "_hdr": "Trade Prestige",
-    "_cnt": "9 Tryon St Upper Mount Gravatt QLD 4122",
-    "_img": "logo.jpg"
-  },
+window.sfDealers = [{
+  "_id": 806,
+  "dealerId": "02352",
+  "_hdr": "Trade Prestige",
+  "_cnt": "9 Tryon St Upper Mount Gravatt QLD 4122",
+  "_img": "logo.jpg",
+  "monday": "$199",
+  "tuesday": "$199",
+  "wednesday": "$199",
+  "thursday": "$199",
+  "friday": "$199",
+  "saturday": "$199",
+  "sunday": "<em>Please Enquire</em>"
+},
   {
     "_id": 846,
     "dealerId": "02468",
     "_hdr": "Newcastle Mazda",
     "_cnt": "2580 Ipswich Road Darra QLD 4076",
-    "_img": "logo-2.jpg"
+    "_img": "logo-2.jpg",
+    "monday": "$205",
+    "tuesday": "$205",
+    "wednesday": "$205",
+    "thursday": "$205",
+    "friday": "$205",
+    "saturday": "$205",
+    "sunday": "$205"
   },
   {
     "_id": 1367,
     "dealerId": "04488",
     "_hdr": "Nowra car city",
     "_cnt": "2580 Ipswich Road Darra QLD 4076",
-    "_img": "logo-3.jpg"
+    "_img": "logo-3.jpg",
+    "monday": "$250",
+    "tuesday": "$250",
+    "wednesday": "$250",
+    "thursday": "$250",
+    "friday": "<em>Please Enquire</em>",
+    "saturday": "$250",
+    "sunday": "$250"
   },
   {
     "_id": 11626,
     "dealerId": "03422",
     "_hdr": "Newcastle City Great Wall",
     "_cnt": "1884 Albany Highway Maddington WA 6109",
-    "_img": "logo-4.jpg"
+    "_img": "logo-4.jpg",
+    "monday": "$189",
+    "tuesday": "$189",
+    "wednesday": "$189",
+    "thursday": "$189",
+    "friday": "$189",
+    "saturday": "<em>Please Enquire</em>",
+    "sunday": "<em>Please Enquire</em>"
   },
   {
     "_id": 13893,
     "dealerId": "00197",
     "_hdr": "Regal Subaru",
     "_cnt": "1 East Street Nowra NSW 2541",
-    "_img": "logo-5.jpg"
+    "_img": "logo-5.jpg",
+    "monday": "$256",
+    "tuesday": "$256",
+    "wednesday": "$256",
+    "thursday": "$256",
+    "friday": "$256",
+    "saturday": "$256",
+    "sunday": "<em>Please Enquire</em>"
   },
   {
     "_id": 15874,
     "dealerId": "03617",
     "_hdr": "Cessnock Holden",
     "_cnt": "116-138 Commercial Street East Mount Gambier SA 5290",
-    "_img": "logo-6.jpg"
+    "_img": "logo-6.jpg",
+    "monday": "$314",
+    "tuesday": "$314",
+    "wednesday": "$314",
+    "thursday": "$314",
+    "friday": "$314",
+    "saturday": "$314",
+    "sunday": "<em>Please Enquire</em>"
   },
   {
     "_id": 37686,
     "dealerId": "02436",
     "_hdr": "Prestige auto trader",
     "_cnt": "60 Shore Street Cleveland QLD 4163",
-    "_img": "logo-7.jpg"
+    "_img": "logo-7.jpg",
+    "monday": "$289",
+    "tuesday": "$289",
+    "wednesday": "$289",
+    "thursday": "$289",
+    "friday": "$289",
+    "saturday": "$289",
+    "sunday": "$350"
   }
   ,
   {
@@ -54,19 +102,40 @@ window.sfDealers = [
     "dealerId": "05856",
     "_hdr": "Suttons Motors Group",
     "_cnt": "3450 Pacific Highway Springwood QLD 4127",
-    "_img": "logo-8.jpg"
+    "_img": "logo-8.jpg",
+    "monday": "$456",
+    "tuesday": "$456",
+    "wednesday": "$456",
+    "thursday": "$456",
+    "friday": "$456",
+    "saturday": "$456",
+    "sunday": "<em>Please Enquire</em>"
   },
   {
     "_id": 37748,
     "dealerId": "02369",
     "_hdr": "Bayford Kia",
     "_cnt": "3450 Pacific Highway Springwood QLD 4127",
-    "_img": "logo-9.jpg"
+    "_img": "logo-9.jpg",
+    "monday": "<em>Please Enquire</em>",
+    "tuesday": "$315",
+    "wednesday": "$315",
+    "thursday": "$315",
+    "friday": "$315",
+    "saturday": "$315",
+    "sunday": "$315"
   },
   {
     "_id": 1365,
     "dealerId": "04486",
     "_hdr": "Berwick Mitsubishi",
     "_cnt": "115 Redland Bay Road Capalaba QLD 4157",
-    "_img": "logo-10.jpg"
+    "_img": "logo-10.jpg",
+    "monday": "$256",
+    "tuesday": "$256",
+    "wednesday": "$256",
+    "thursday": "$256",
+    "friday": "$256",
+    "saturday": "$256",
+    "sunday": "<em>Please Enquire</em>"
   }];

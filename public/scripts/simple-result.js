@@ -1,7 +1,7 @@
 (function () {
   // opts
   var app = SimpleApp('lp-result-simple', {
-    localStorageRead:false
+    localStorageRead: false
   });
 
   app.template.main = {
@@ -19,7 +19,9 @@
   };
 
   app.template.sub.jumbo = {
-    default: '<div {attr}><p>Add more details to get prices for either a quick service or a logbook service for your <em>{_mm}</em></p>{_btn}</div>'
+    default: '<div {attr}><p>Add more details to get ' +
+    'prices for either a quick service or a logbook service for your ' +
+    '<em>{_mm}</em></p>{_btn}</div>'
   };
   app.data.jumbo = {
     class: 'hmcPage--sectionContent jumbotron serviceFinder--jumbotron',
@@ -34,8 +36,10 @@
     _wrapper: ['<div class="serviceFinder--resultSimple" {attr}>', '</div>'],
     default: '<div class="serviceFinder--resultItem">' +
     '<label><img src="/images/{_img}"></label>' +
-    '<div><h3>{_hdr}</h3><p>{_cnt}</p><button class="btn btn-serviceFinder" ' +
-    'onclick="SimpleApp(\'lp-result-simple\').updateState(\'detail\', true)">Get Price</button></div></div>'
+    '<div><h3>{_hdr}</h3><p>{_cnt}</p><button type="button" ' +
+    'class="btn btn-serviceFinder" ' +
+    'onclick="SimpleApp(\'lp-result-simple\').updateState(\'detail\', {_id})">' +
+    'Get Price</button></div></div>'
   };
   app.data.results = {
     wrapper: {},
@@ -50,6 +54,13 @@
     document.location.href = '/more-details?make=' + inputData.make
       + '&model=' + inputData.model
       + '&location=' + inputData.location;
+  });
+
+  app.on(SimpleAppStateIsUpdated, 'detail', function (obj) {
+    // we use the given state to do the job
+    console.clear();
+    console.log('details button', obj);
+    document.location.href = '/confirm?id=' + obj.value;
   });
 
 })();
